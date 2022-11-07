@@ -34,9 +34,15 @@ public class Person {
         this.age = age;
     }
 
-    public int wordsInSurname() {
+    public int wordsInSurname() { // Салтыков-Щедрин
         String[] word = surname.split(" ");
         int count = word.length;
+        if (count == 1) {
+            word = surname.split("-");
+            if (word.length > 1) {
+                count = word.length;
+            }
+        }
         return count;
     }
 }
